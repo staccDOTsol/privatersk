@@ -131,7 +131,7 @@ class Predictor(BasePredictor):
         # Keyword arguments {'batch_size': 1} are not expected by StableDiffusionPipeline and will be ignored.
         pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_id, torch_dtype=torch.float16,
             cache_dir=MODEL_CACHE,
-            local_files_only=True)
+            local_files_only=False)
         pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
         pipe = pipe.to("cuda")
         self.pipe = pipe
