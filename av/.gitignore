@@ -1,0 +1,4 @@
+.ffmpeg
+config.mak
+ffmpeg/
+ffmpeg-*.gz
